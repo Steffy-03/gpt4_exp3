@@ -1,0 +1,23 @@
+===== Intelligent Email Assistant =====
+
+Date: 2026-09-03 07:48:58
+
+Customer Email:
+My package has not arrived yet.
+
+Intent:
+Delivery Issue
+
+Generated Reply:
+Subject: Update on Your Shipment
+
+Dear Customer,
+
+Thank you for your inquiry regarding your shipment. We appreciate your patience and understanding as we address your concern.
+
+Our logistics team is currently tracking your package, and you should receive an update within the next 24 hours. If you have not received any further information by that time, please do not hesitate to contact us for additional assistance.
+
+Thank you for your continued patience.
+
+Best regards,
+[Your Company's Support Team]

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intelligent Email Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">✉</div>
+
+        <div>
+            <h1>Intelligent Email Assistant</h1>
+            <p>AI-Powered Customer Email Response System</p>
+        </div>
+
+        <div class="ollama-status">
+            <span class="status-dot"></span>
+            Ollama Connected
+        </div>
+
+    </header>
+
+
+    <!-- Main Input -->
+    <div class="top-grid">
+
+        <!-- Customer Email -->
+        <section class="card input-card">
+
+            <div class="section-title">
+                <span>📧</span>
+                <h2>Customer Email</h2>
+            </div>
+
+            <label>Customer Name</label>
+
+            <input
+                type="text"
+                id="customer_name"
+                placeholder="Enter customer name"
+            >
+
+
+            <label>Email Subject</label>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Enter email subject"
+            >
+
+
+            <label>Customer Email</label>
+
+            <textarea
+                id="customer_email"
+                rows="6"
+                placeholder="Enter customer's email..."
+            ></textarea>
+
+
+            <label>Reply Tone</label>
+
+            <select id="tone">
+
+                <option value="Friendly">Friendly</option>
+                <option value="Formal" selected>Formal</option>
+                <option value="Empathetic">Empathetic</option>
+
+            </select>
+
+
+            <button id="generateBtn" onclick="generateResponse()">
+
+                <span>✨</span>
+                Generate AI Response
+
+            </button>
+
+        </section>
+
+
+        <!-- Analysis -->
+        <section class="card analysis-card">
+
+            <div class="section-title">
+                <span>📊</span>
+                <h2>Email Analysis</h2>
+            </div>
+
+
+            <div class="analysis-item">
+
+                <div class="analysis-label">
+                    <span>🎯</span>
+                    Detected Intent
+                </div>
+
+                <div id="intent" class="badge waiting">
+                    Waiting
+                </div>
+
+            </div>
+
+
+            <div class="analysis-item">
+
+                <div class="analysis-label">
+                    <span>🔎</span>
+                    Similar Previous Email
+                </div>
+
+                <div id="previous_email" class="analysis-content">
+                    No email retrieved yet.
+                </div>
+
+            </div>
+
+
+            <div class="analysis-item">
+
+                <div class="analysis-label">
+                    <span>💬</span>
+                    Previous Reply
+                </div>
+
+                <div id="previous_reply" class="analysis-content">
+                    No previous reply retrieved yet.
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- AI Reply -->
+    <section class="card output-card">
+
+        <div class="output-header">
+
+            <div class="section-title">
+                <span>🤖</span>
+                <h2>AI Generated Reply</h2>
+            </div>
+
+            <button class="copy-btn"
+                    onclick="copyText('generated_reply')">
+                📋 Copy
+            </button>
+
+        </div>
+
+
+        <div id="generated_reply" class="output-box placeholder">
+            Your AI-generated reply will appear here.
+        </div>
+
+    </section>
+
+
+    <!-- Tone Reply -->
+    <section class="card output-card">
+
+        <div class="output-header">
+
+            <div class="section-title">
+                <span>✨</span>
+                <h2>Tone Improved Reply</h2>
+            </div>
+
+            <span id="selected_tone" class="tone-badge">
+                Formal
+            </span>
+
+        </div>
+
+
+        <div id="improved_reply" class="output-box placeholder">
+            Your selected tone response will appear here.
+        </div>
+
+    </section>
+
+
+    <!-- Summary -->
+    <section class="card output-card">
+
+        <div class="output-header">
+
+            <div class="section-title">
+                <span>📝</span>
+                <h2>Conversation Summary</h2>
+            </div>
+
+            <span id="word_count" class="word-badge">
+                0 words
+            </span>
+
+        </div>
+
+
+        <div id="summary" class="output-box placeholder">
+            Summary will appear here.
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <span>Powered by</span>
+        <strong>Ollama + Qwen 2.5</strong>
+
+        <span>•</span>
+
+        <span>Intelligent Email Assistant</span>
+
+    </footer>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+
+.page {
+    width: 92%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+
+/* Header */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+
+.logo {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1f2937;
+    color: white;
+    border-radius: 12px;
+    font-size: 25px;
+}
+
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+
+.header p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+.ollama-status {
+    margin-left: auto;
+    padding: 9px 14px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #374151;
+}
+
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+
+/* Grid */
+
+.top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+/* Cards */
+
+.card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+
+.section-title span {
+    font-size: 21px;
+}
+
+
+.section-title h2 {
+    font-size: 19px;
+    color: #111827;
+}
+
+
+/* Inputs */
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 15px 0 7px;
+}
+
+
+input,
+textarea,
+select {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    background: white;
+    outline: none;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #6b7280;
+}
+
+
+textarea {
+    resize: vertical;
+}
+
+
+/* Generate Button */
+
+#generateBtn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #1f2937;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#generateBtn:hover {
+    background: #111827;
+}
+
+
+#generateBtn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+
+/* Analysis */
+
+.analysis-item {
+    margin-bottom: 18px;
+}
+
+
+.analysis-label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+
+.badge {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.badge.waiting {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+
+.badge.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+
+.analysis-content {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 13px;
+    min-height: 55px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+
+/* Output */
+
+.output-card {
+    margin-bottom: 20px;
+}
+
+
+.output-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.output-header .section-title {
+    margin-bottom: 15px;
+}
+
+
+.output-box {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 9px;
+    padding: 18px;
+    min-height: 130px;
+    white-space: pre-wrap;
+    line-height: 1.65;
+    font-size: 14px;
+}
+
+
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    min-height: 120px;
+}
+
+
+/* Buttons */
+
+.copy-btn {
+    border: 1px solid #d1d5db;
+    background: white;
+    padding: 7px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+.copy-btn:hover {
+    background: #f3f4f6;
+}
+
+
+.tone-badge {
+    background: #eef2ff;
+    color: #3730a3;
+    padding: 6px 11px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.word-badge {
+    background: #f3f4f6;
+    color: #374151;
+    padding: 6px 11px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+
+footer strong {
+    color: #374151;
+    margin: 0 5px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 850px) {
+
+    .top-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .ollama-status {
+        margin-left: 0;
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .page {
+        width: 95%;
+        padding-top: 15px;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+}
